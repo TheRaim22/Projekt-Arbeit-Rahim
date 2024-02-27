@@ -2,7 +2,6 @@
 ### UML:
 ```mermaid
 classDiagram
-classDiagram
 a --> a
 a --> a
 a --> a
