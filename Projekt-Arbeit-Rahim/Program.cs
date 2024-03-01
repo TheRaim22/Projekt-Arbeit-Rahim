@@ -8,7 +8,7 @@ namespace Projekt_Arbeit_Rahim
         {
             while (true)
             {
-                int userInput;
+                int IN;
 
                 Console.WriteLine("----------------------------------------");
                 Console.WriteLine("Willkommen zum The Binding of Isaac Wiki.");
@@ -23,10 +23,10 @@ namespace Projekt_Arbeit_Rahim
                 Console.WriteLine("Eingabe:");
 
 
-                if (int.TryParse(Console.ReadLine(), out userInput))
+                if (int.TryParse(Console.ReadLine(), out IN))
 
                 {
-                    switch (userInput)
+                    switch (IN)
                     {
                         case 1:
                             Console.WriteLine("Option 1 ausgewählt");
