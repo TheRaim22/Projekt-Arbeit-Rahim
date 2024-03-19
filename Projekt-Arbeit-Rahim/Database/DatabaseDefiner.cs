@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Projekt_Arbeit_Rahim.Database
 {
@@ -12,13 +11,11 @@ namespace Projekt_Arbeit_Rahim.Database
     {
         public DbSet<BaseItem> BaseItems { get; set; } = null!;
         public DbSet<ModItem> ModItems { get; set; } = null!;
-       
-
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<BaseItem>().HasKey(MI => MI.Id);
-            modelBuilder.Entity<ModItem>().HasKey(MI => MI.Id);
+            modelBuilder.Entity<BaseItem>().HasKey(bi => bi.Id);
+            modelBuilder.Entity<ModItem>().HasKey(mi => mi.Id);
           
            
             base.OnModelCreating(modelBuilder);
