@@ -24,7 +24,7 @@ namespace Projekt_Arbeit_Rahim.Database
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlite($@"Data Source={Directory.GetCurrentDirectory()}\Database\Database.db");
+                optionsBuilder.UseSqlite($@"Data Source={Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)}\source\repos\Projekt-Arbeit-Rahim\Projekt-Arbeit-Rahim\Database\Database.db");
             }
             base.OnConfiguring(optionsBuilder);
         }
