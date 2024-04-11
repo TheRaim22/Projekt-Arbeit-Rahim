@@ -33,10 +33,15 @@ namespace Projekt_Arbeit_Rahim
                             Console.WriteLine("Geben Sie den Namen des Items ein, nach dem Sie suchen möchten:");
                             string itemName = Console.ReadLine();
                             BaseItem? foundItem = dbContext.BaseItems.FirstOrDefault(x => x.Name == itemName);
-                            if (foundItem != null)
+                            ModItem? foundModItem = dbContext.ModItems.FirstOrDefault(x => x.Name == itemName);
+                            if (foundItem != null || foundModItem != null)
                             {
-                                Console.WriteLine($"Name: {foundItem.Name}, Effekt: {foundItem.Effekt}");
+                                if (foundItem != null) Console.WriteLine($"Name: {foundItem.Name}, Effekt: {foundItem.Effekt}");
+                                if (foundModItem != null) Console.WriteLine($"Name: {foundModItem.Name}, Effekt: {foundModItem.Effekt}");
+
+
                             }
+
                             else
                             {
                                 Console.WriteLine("Das gesuchte Item wurde nicht gefunden.");
