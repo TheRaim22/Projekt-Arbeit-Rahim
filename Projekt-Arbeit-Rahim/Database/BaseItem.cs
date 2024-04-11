@@ -11,5 +11,7 @@ namespace Projekt_Arbeit_Rahim.Database
         public int Id { get; set; }
         public string Effekt { get; set; }
         public string Name { get; set; }
+
     }
 }
+

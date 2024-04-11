@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+using Projekt_Arbeit_Rahim.Database;
+using System;
 
 namespace Projekt_Arbeit_Rahim
 {
@@ -8,7 +10,7 @@ namespace Projekt_Arbeit_Rahim
         {
             while (true)
             {
-                int IN;
+                int input;
 
                 Console.WriteLine("----------------------------------------");
                 Console.WriteLine("Willkommen zum The Binding of Isaac Wiki.");
@@ -18,41 +20,49 @@ namespace Projekt_Arbeit_Rahim
                 Console.ReadKey();
                 Console.Clear();
 
-                Console.WriteLine("1. Item Namen Liste \n2. Item Info \n3. Clear \n4. Beenden");
+                Console.WriteLine("1. Item suchen\n2. Item hinzufügen\n3. Clear\n4. Beenden");
                 Console.WriteLine("----------------------------------------");
                 Console.WriteLine("Eingabe:");
 
-
-                if (int.TryParse(Console.ReadLine(), out IN))
-
+                switch (int.TryParse(Console.ReadLine(), out input))
                 {
-                    switch (IN)
-                    {
-                        case 1:
-                            Console.WriteLine("Option 1 ausgewählt");
-                            break;
-                        case 2:
-                            Console.WriteLine("Option 2 ausgewählt");
-                            break;
-                        case 3:
-                            Console.Clear();
-                            break;
-                        case 4:
-                            Environment.Exit(0);
-                            break;
-                        default:
-                            
-                            Console.WriteLine("Ungültige Eingabe. Kein Item gefunden.\n bitte einde taste drücken zum fortfahren");
-                            Console.ReadKey();
-                            Console.Clear();
-                            break;
+                    case 1:
+                        Console.WriteLine("Geben Sie den Namen des Items ein, nach dem Sie suchen möchten:");
+                        string itemName = Console.ReadLine();
+                        BaseItem foundItem = BaseItem.GetItemByName(itemName);
+                        if (foundItem != null)
+                        {
+                            Console.WriteLine($"Name: {foundItem.Name}, Effekt: {foundItem.Effekt}");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Das gesuchte Item wurde nicht gefunden.");
+                        }
+                        break;
+                    case 2:
+                        Console.WriteLine("Geben Sie den Namen des neuen Items ein:");
+                        string newItemName = Console.ReadLine();
+                        Console.WriteLine("Geben Sie den Effekt des neuen Items ein:");
+                        string newItemEffect = Console.ReadLine();
+                        ModItem newItem = new ModItem { Name = newItemName, Effekt = newItemEffect };
+                        ModItem.AddItem(newItem);
+                        Console.WriteLine("Das neue Item wurde hinzugefügt.");
+                        break;
+                    case 3:
+                        Console.Clear();
+                        break;
+                    case 4:
+                        Environment.Exit(0);
+                        break;
+                    default:
+                        Console.WriteLine("Ungültige Eingabe. Bitte geben Sie eine der verfügbaren Optionen ein.");
+                        break;
                     }
-                }
                 else
-                {
-                    Console.WriteLine("Ungültige Eingabe. Bitte geben Sie eine Zahl ein.");
+                    {
+                        Console.WriteLine("Ungültige Eingabe. Bitte geben Sie eine Zahl ein.");
+                    }
                 }
             }
         }
     }
-}
