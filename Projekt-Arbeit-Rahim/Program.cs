@@ -47,8 +47,7 @@ namespace Projekt_Arbeit_Rahim
                             string newItemName = Console.ReadLine();
                             Console.WriteLine("Geben Sie den Effekt des neuen Items ein:");
                             string newItemEffect = Console.ReadLine();
-                            ModItem newItem = new ModItem { Name = newItemName, Effekt = newItemEffect };
-                            dbContext.ModItems.Add(newItem);
+                            dbContext.ModItems.Add(new ModItem { Name = newItemName, Effekt = newItemEffect });
                             dbContext.SaveChanges();
                             Console.WriteLine("Das neue Item wurde hinzugefügt.");
                             break;

@@ -9,8 +9,8 @@ namespace Projekt_Arbeit_Rahim.Database
     internal class BaseItem
     {
         public int Id { get; set; }
-        public string Effekt { get; set; }
-        public string Name { get; set; }
+        public string Effekt { get; set; } = null!;
+        public string Name { get; set; } = null!;
 
     }
 }
