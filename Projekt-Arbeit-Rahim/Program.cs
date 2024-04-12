@@ -32,7 +32,7 @@ namespace Projekt_Arbeit_Rahim
                         case 1:
                             Console.WriteLine("Geben Sie den Namen des Items ein, nach dem Sie suchen möchten:");
                             string itemName = Console.ReadLine();
-                            BaseItem? foundItem = dbContext.BaseItems.FirstOrDefault(x => x.Name == itemName);
+                            BaseItem? foundItem = dbContext.BaseItems.FirstOrDefault(x => x.Name == itemName); 
                             ModItem? foundModItem = dbContext.ModItems.FirstOrDefault(x => x.Name == itemName);
                             if (foundItem != null || foundModItem != null)
                             {
