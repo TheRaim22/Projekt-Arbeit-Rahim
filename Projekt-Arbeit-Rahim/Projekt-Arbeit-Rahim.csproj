@@ -9,11 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\.editorconfig" Link=".editorconfig" />
+    <Compile Remove="Database\NewFolder\**" />
+    <EmbeddedResource Remove="Database\NewFolder\**" />
+    <None Remove="Database\NewFolder\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Database\NewFolder\" />
+    <None Include="..\.editorconfig" Link=".editorconfig" />
   </ItemGroup>
 
   <ItemGroup>
