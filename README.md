@@ -15,14 +15,11 @@
 
 ```mermaid
 classDiagram
-    class Program {
-        +Main(string[] args)
-    }
 
     class DatabaseDefiner {
         -BaseItems: DbSet<BaseItem>
         -ModItems: DbSet<ModItem>
-        +SaveChanges()
+
     }
 
     class BaseItem {
