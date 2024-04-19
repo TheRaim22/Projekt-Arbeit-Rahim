@@ -4,15 +4,6 @@
 
 
 
-
-
-
-
-########
-
-
-
-
 ```mermaid
 classDiagram
 
@@ -32,7 +23,7 @@ classDiagram
         -Effekt: string
     }
 
-    Program --> DatabaseDefiner
+
     DatabaseDefiner "1" --> "0.." BaseItem
     DatabaseDefiner --> ModItem
 
