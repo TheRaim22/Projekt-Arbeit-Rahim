@@ -62,7 +62,7 @@ classDiagram
     }
 
     Program --> DatabaseDefiner
-    DatabaseDefiner --> BaseItem
+    DatabaseDefiner "1" --> "0.." BaseItem
     DatabaseDefiner --> ModItem
 
 ```
