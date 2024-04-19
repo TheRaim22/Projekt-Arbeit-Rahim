@@ -7,24 +7,12 @@
 ```mermaid
 classDiagram
 
-    class DatabaseDefiner {
-        -BaseItems: DbSet<BaseItem>
-        -ModItems: DbSet<ModItem>
+BaseItem : +int Id
+BaseItem : +string Effekt = null!
+BaseItem : +string Name = null!
 
-    }
-
-    class BaseItem {
-        -Name: string
-        -Effekt: string
-    }
-
-    class ModItem {
-        -Name: string
-        -Effekt: string
-    }
-
-
-    DatabaseDefiner "1" --> "0.." BaseItem
-    DatabaseDefiner --> ModItem
+ModItem : +int Id
+ModItem : +string Effekt = null!
+ModItem : +string Name = null!
 
 ```
